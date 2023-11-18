@@ -239,7 +239,7 @@ class DeltaToMarkdown extends Converter<Delta, String>
                 false))) {
           content = content.replaceAllMapped(
               RegExp(r'[\\\`\*\_\{\}\[\]\(\)\#\+\-\.\!\>\<]'), (match) {
-            return match[0];
+            return '${match[0]}';
           });
         }
         out.write(content);

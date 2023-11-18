@@ -94,6 +94,7 @@ class DeltaToMarkdown extends Converter<Delta, String>
           ..write('#' * (attribute.value.asNullable<int>() ?? 1))
           ..write(' ');
       },
+      afterContent: (attribute, node, output) => output.writeln(),
     ),
     Attribute.blockQuote.key: _AttributeHandler(
       beforeContent: (attribute, node, output) => output.write('> '),
